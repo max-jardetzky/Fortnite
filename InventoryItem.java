@@ -1,0 +1,3 @@
+class InventoryItem extends FortniteEntity {
+
+}

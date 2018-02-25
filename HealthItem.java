@@ -1,0 +1,3 @@
+class HealthItem extends InventoryItem {
+
+}
