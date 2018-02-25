@@ -1,3 +1,6 @@
+/**
+ * Represents a weapon (gun) that can inflict damage.
+ */
 class Weapon extends InventoryItem {
    private String name;
    private int damageInflicted;
@@ -13,6 +16,9 @@ class Weapon extends InventoryItem {
       this.accuracyPercentage = accuracyPercentage;
    }
    
+   /**
+    * Calculates the damage to be given based on certain random factors.
+    */
    public int getDamageInflicted() {
       int totalDamage = 0;
       for (int i = 0; i < 4; i++) {

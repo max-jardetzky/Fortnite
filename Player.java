@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Represents a single player, with health, location, and an inventory.
+ */
 class Player extends FortniteEntity {
    private String name;
    private int health;
@@ -13,10 +16,6 @@ class Player extends FortniteEntity {
       this.xLocation = xLocation;
       this.yLocation = yLocation;
       inventory = new ArrayList<InventoryItem>();
-   }
-   
-   public void inflictDamage(Weapon w, Player p) {
-   
    }
    
    public void setLocation(int x, int y) {

@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Plays battle royale with 2-4 players.
+ * Turn-based combat, movement, and environment interaction.
+ * Have fun!
+ */
 public class FortniteTester_4JarGnibo {
    private static int mapWidth;
    private static int mapHeight;
@@ -292,9 +297,11 @@ public class FortniteTester_4JarGnibo {
       System.out.print("\n");
    }
    
+   /**
+    * Swaps the player and the FortniteEntity object at the new coordinates.
+    * If the FortniteEntity is a Weapon or Medkit the player adds it to their inventory and a new Ground object is constructed at their initial position.
+    */  
    public static int movePlayer(Player p, int numSpaces, String direction, int totalNumSpaces) {
-      // Swaps the player and the FortniteEntity object at the new coordinates.
-      // If the FortniteEntity is a Weapon or Medkit the player adds it to their inventory and a new Ground object is constructed at their initial position.
       int originalXLocation = p.getXLocation();
       int originalYLocation = p.getYLocation();
       int newXLocation = 0;
@@ -351,6 +358,9 @@ public class FortniteTester_4JarGnibo {
       return totalNumSpaces;
    }
    
+   /**
+    * Moves the storm forward, with the argument to do damage to players or not.
+    */
    public static void advanceStorm(boolean replenish) {
       for (int i = 0; i < mapWidth; i++) {
          for (int j = 0; j <= stormRadius - 1; j++) {
@@ -396,6 +406,9 @@ public class FortniteTester_4JarGnibo {
       }  
    }
    
+   /**
+    * Checks if a given player is alive, if not, performs necessary actions.
+    */
    public static boolean checkIfAlive(Player p) {
       if (p.getHealth() > 0) {
          return true;
