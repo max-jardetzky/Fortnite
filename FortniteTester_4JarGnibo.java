@@ -33,7 +33,7 @@ public class FortniteTester_4JarGnibo {
       
       String userInput = "";
       boolean isDigit = false;
-      
+
       while (!isDigit) {
          System.out.print("Enter number of players (2-4): ");
          userInput = scanner.nextLine();
@@ -265,15 +265,17 @@ public class FortniteTester_4JarGnibo {
                   }
                }
             }
-            else {
+            else if (p.isAlive()) {
                checkIfAlive(p);
+               p.setAlive(false);
+               numPlayersAlive--;
             }
          }
       }
       
       printMap();
       for (Player p : players) {
-         if (p.getHealth() > 0) {
+         if (p.getHealth() > 0 && numPlayersAlive == 1) {
             System.out.println("Victory Royale! " + p.getName() + " won!");
          }
       }
@@ -417,7 +419,6 @@ public class FortniteTester_4JarGnibo {
          System.out.println(p.getName() + " died!");
          map[p.getYLocation()][p.getXLocation()] = new Ground();
          advanceStorm(true);
-         numPlayersAlive--;
          return false;
       }
    }

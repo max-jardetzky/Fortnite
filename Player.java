@@ -8,6 +8,7 @@ class Player extends FortniteEntity {
    private int health;
    private int xLocation;
    private int yLocation;
+   private boolean isAlive;
    private ArrayList<InventoryItem> inventory;
    
    public Player(String name, int health, int xLocation, int yLocation) {
@@ -15,6 +16,7 @@ class Player extends FortniteEntity {
       this.health = health;
       this.xLocation = xLocation;
       this.yLocation = yLocation;
+      isAlive = true;
       inventory = new ArrayList<InventoryItem>();
    }
    
@@ -75,6 +77,14 @@ class Player extends FortniteEntity {
          }
       }
       return -1;
+   }
+   
+   public boolean isAlive() {
+      return isAlive;
+   }
+   
+   public void setAlive(boolean alive) {
+      isAlive = alive;
    }
    
    public String toString() {
